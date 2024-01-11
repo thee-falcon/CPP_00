@@ -6,13 +6,13 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:11:07 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/11 21:37:18 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/11 21:52:20 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     char    *word;
 
