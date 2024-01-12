@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: omakran <omakran@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/11 18:11:04 by omakran           #+#    #+#              #
-#    Updated: 2024/01/12 12:06:06 by omakran          ###   ########.fr        #
+#    Created: 2024/01/12 12:13:29 by omakran           #+#    #+#              #
+#    Updated: 2024/01/12 12:59:35 by omakran          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC = megaphone
+EXEC = my_awesome_phonbook
 
-SRCS = megaphone.cpp
+SRCS = main.cpp PhoneBook.cpp Contact.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 
