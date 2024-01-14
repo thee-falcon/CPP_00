@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:48:08 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/13 20:11:51 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/14 19:49:55 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
     void    printStyleWelcome(void);
     void    awesomeWelcome(void);
     void    setContact(void);
+    void    DisplayContacts(void);
 };
 
 #endif

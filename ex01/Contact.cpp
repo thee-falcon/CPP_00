@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:53:10 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/13 23:54:35 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/14 19:53:17 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ Contact::Contact(/* args */)
 Contact::~Contact()
 {
 }
-
+void    Contact::setRankContact(int rank)
+{
+    this->_rankCountact = rank;
+}
 void    Contact::initData(void)
 {
     std::cout << "> Please Enter Your First Name: ";
