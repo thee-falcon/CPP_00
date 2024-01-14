@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:53:33 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/12 15:03:50 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/13 23:35:58 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 class Contact
 {
-private:
     std::string first_name;
     std::string last_name;
     std::string nick_name;
@@ -26,6 +25,7 @@ private:
 public:
     Contact(/* args */);
     ~Contact();
+    void    initData();
 };
 
 #endif

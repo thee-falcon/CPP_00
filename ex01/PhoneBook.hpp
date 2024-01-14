@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:48:08 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/12 15:02:22 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/13 20:11:51 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 
 class PhoneBook
 {
-private:
-    /* data */
+    Contact _n_contacts[8];
 public:
     PhoneBook();
     ~PhoneBook();
-    void    PrintStyleWelcome(void);
-    void    awesome_welcome(void);
+    //mutators or methods:
+    void    printStyleWelcome(void);
+    void    awesomeWelcome(void);
+    void    setContact(void);
 };
 
 #endif
