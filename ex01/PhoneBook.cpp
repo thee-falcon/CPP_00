@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:22:09 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/14 19:52:00 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/15 13:54:28 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,8 @@ void    PhoneBook::setContact()
 void    PhoneBook::DisplayContacts()
 {
     std::cout << "--------------=> Contact Users: <=--------------" << std::endl;
+    for (size_t i = 0; i < 8; i++)
+    {   
+        this->_n_contacts[i].printContacts(i);
+    }
 }
