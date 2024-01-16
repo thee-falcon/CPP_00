@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:22:09 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/15 13:54:28 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/16 19:31:05 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 PhoneBook::PhoneBook(/* args */)
 {
+    n_contact = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -41,18 +42,48 @@ void    PhoneBook::awesomeWelcome()
 
 void    PhoneBook::setContact()
 {
-    static int  n_contact = 0;
-
     this->_n_contacts[n_contact % 8].initData();
     this->_n_contacts[n_contact % 8].setRankContact(n_contact % 8);
     n_contact++;
 }
 
-void    PhoneBook::DisplayContacts()
+void    PhoneBook::displayContacts()
 {
     std::cout << "--------------=> Contact Users: <=--------------" << std::endl;
     for (size_t i = 0; i < 8; i++)
     {   
         this->_n_contacts[i].printContacts(i);
     }
+}
+int PhoneBook::_inputUserIndex()const
+{
+    int     index = -1337;
+    bool    check = false;
+    do
+    {
+        std::cout << "Please Enter the Index for searching about the contact: " << std::flush;
+        std::cin >> index;
+        // It checks if the stream is in a good state, meaning that the last input operation was successful and there are no error flags set
+        if ((index >= 0 && index <= 8) && std::cin.good())
+        {
+            check = true ;
+            if (index > this->n_contact - 1)
+                std::cout << "Invalid Index!" << std::endl;
+                continue ;
+        }
+        else
+            {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Please Enter a VALID INDEX, <from 1 TO 8>." << std::endl; 
+            }
+        
+    } while (!check);
+    return (index);
+}
+
+void    PhoneBook::searchOfContact()const
+{
+    int index = this->_inputUserIndex();
+    this->_n_contacts[index].printContacts(index);
 }

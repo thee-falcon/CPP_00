@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:48:08 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/14 19:49:55 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/16 19:01:22 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 class PhoneBook
 {
     Contact _n_contacts[8];
+    int     n_contact;
+    int _inputUserIndex(void)const;
 public:
     PhoneBook();
     ~PhoneBook();
@@ -25,7 +27,8 @@ public:
     void    printStyleWelcome(void);
     void    awesomeWelcome(void);
     void    setContact(void);
-    void    DisplayContacts(void);
+    void    displayContacts(void);
+    void    searchOfContact(void)const;
 };
 
 #endif

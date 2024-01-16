@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:12:14 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/15 15:43:03 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/16 17:08:31 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main(void)
     book.awesomeWelcome();
     while (true)
     {
-        std::cout << "==> " << std::flush;
         std::cin >> ci_user;
         if (ci_user == "EXIT")
             break ;
@@ -29,8 +28,8 @@ int main(void)
             book.setContact();
         else if (ci_user == "SEARCH")
         {
-            book.DisplayContacts();
-            // book. ;   
+            book.displayContacts();
+            book.searchOfContact();   
         }
     }
     return (0);
