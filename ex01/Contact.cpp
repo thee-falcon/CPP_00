@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:53:10 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/15 15:40:57 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/16 21:02:45 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ void    Contact::initData(void)
     std::cout << "> Please Enter Your Darkest Secret: ";
     std::cin >> this->darkest_secret;
 }
-void    Contact::printContacts(__unused int i) const
+void    Contact::printContacts(int i) const
 {
     if (!this->first_name.empty() || !this->last_name.empty() || !this->nick_name.empty())
     {
-        std::cout << "|" << std::setw(10) << i + 1 << std::flush;
+        std::cout << "|" << std::setw(10) << i << std::flush;
         std::cout << "|" << std::setw(10) << truncateText(this->first_name, 10) << std::flush;
         std::cout << "|" <<  std::setw(10) << truncateText(this->last_name, 10) << std::flush;
         std::cout << "|" << std::setw(10) << truncateText(this->nick_name, 10) << std::flush;
@@ -54,4 +54,18 @@ std::string Contact::truncateText(const std::string& text, size_t max_length) co
         return (text.substr(0, max_length - 1) + ".");
     else
         return (text);
+}
+
+void    Contact::showContat(int i) const
+{
+   if (!this->first_name.empty() || !this->last_name.empty() || !this->nick_name.empty())
+    {
+        std::cout << std::endl;
+        std::cout << ">>>>>>>> Contac: " << i << " <<<<<<<<<" << std::endl;
+        std::cout << "First Name:\t" << this->first_name << std::endl;
+        std::cout << "Last Name:\t" << this->last_name << std::endl;
+        std::cout << "Nickname:\t" << this->nick_name << std::endl;
+        std::cout << std::endl;
+    }
+
 }

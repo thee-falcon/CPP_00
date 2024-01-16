@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:53:33 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/15 14:08:57 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/16 20:10:18 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
     void        initData();
     void        setRankContact(int rank);
     void        printContacts(int i) const;
+    void        showContat(int i) const;
 };
 
 #endif

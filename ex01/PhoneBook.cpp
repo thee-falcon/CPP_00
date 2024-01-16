@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:22:09 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/16 19:31:05 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/16 21:07:21 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ PhoneBook::~PhoneBook()
 
 void    PhoneBook::printStyleWelcome()
 {
+    std::cout << std::endl;
     std::cout << "############################################################################" <<std::endl;
     std::cout << "#                                                                          #" << std::endl;
     std::cout << "#     🆆 🅴 🅻 🅲 🅾 🅼 🅴     🆃 🅾     < 🅾 🅼 🅰 🅺 🆁 🅰 🅽 >    🅿 🅷 🅾 🅽 🅴 🅱 🅾 🅾 🅺.    #" << std::endl;
-    std::cout << "#                                                                          #" << std::endl;   
-    std::cout << "############################################################################" <<std::endl; 
+    std::cout << "#                                                                          #" << std::endl;
+    std::cout << "############################################################################" <<std::endl;
+    std::cout << std::endl;
 }
 
 void    PhoneBook::awesomeWelcome()
@@ -49,11 +51,11 @@ void    PhoneBook::setContact()
 
 void    PhoneBook::displayContacts()
 {
-    std::cout << "--------------=> Contact Users: <=--------------" << std::endl;
     for (size_t i = 0; i < 8; i++)
     {   
         this->_n_contacts[i].printContacts(i);
     }
+    std::cout << std::endl;
 }
 int PhoneBook::_inputUserIndex()const
 {
@@ -69,7 +71,6 @@ int PhoneBook::_inputUserIndex()const
             check = true ;
             if (index > this->n_contact - 1)
                 std::cout << "Invalid Index!" << std::endl;
-                continue ;
         }
         else
             {
@@ -85,5 +86,5 @@ int PhoneBook::_inputUserIndex()const
 void    PhoneBook::searchOfContact()const
 {
     int index = this->_inputUserIndex();
-    this->_n_contacts[index].printContacts(index);
+    this->_n_contacts[index].showContat(index);
 }
