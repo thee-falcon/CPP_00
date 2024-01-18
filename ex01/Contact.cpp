@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:53:10 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/16 21:02:45 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/18 17:18:32 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ void    Contact::showContat(int i) const
         std::cout << "First Name:\t" << this->first_name << std::endl;
         std::cout << "Last Name:\t" << this->last_name << std::endl;
         std::cout << "Nickname:\t" << this->nick_name << std::endl;
+        std::cout << "Phone Number:\t" << this->phone_number << std::endl;
+        std::cout << "Darkest Secret:\t" << this->darkest_secret << std::endl;
         std::cout << std::endl;
     }
-
 }
