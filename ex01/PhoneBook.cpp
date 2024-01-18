@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:22:09 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/18 17:12:27 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/18 18:20:26 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void    PhoneBook::awesomeWelcome()
 
 void    PhoneBook::setContact()
 {
+    // this-> : is a Pointer, returns its own Address.
     this->_n_contacts[n_contact % 8].initData();
     this->_n_contacts[n_contact % 8].setRankContact(n_contact % 8);
     n_contact++;
