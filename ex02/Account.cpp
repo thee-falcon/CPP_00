@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:06:58 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/20 11:35:32 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/20 11:44:25 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Account::Account(int deposit)
     _amount = deposit;
     _totalAmount += deposit;
     _displayTimestamp();
-    std::cout << "index:" << _accountIndex << ";" << "amount:" << _amount << ";created" << std::endl;
+    std::cout << "index:" << _accountIndex << ";" << "amount:" << checkAmount() << ";created" << std::endl;
 }
 
 Account::~Account(void)
@@ -58,28 +58,28 @@ void    Account::_displayTimestamp(void)
 void    Account::displayAccountsInfos(void)
 {
     _displayTimestamp();
-    std::cout << "accounts:" << _nbAccounts << ";" << "total:" << _totalAmount << ";" << "deposits:" << _totalNbDeposits << ";" << "withdrawals:" << _totalNbWithdrawals << std::endl;
+    std::cout << "accounts:" << getNbAccounts() << ";" << "total:" << getTotalAmount() << ";" << "deposits:" << getNbDeposits() << ";" << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
-// int Account::getNbAccounts(void)
-// {
-//     return (_nbAccounts);
-// }
+int Account::getNbAccounts(void)
+{
+    return (_nbAccounts);
+}
 
-// int Account::getTotalAmount(void)
-// {
-//     return (_totalAmount);
-// }
+int Account::getTotalAmount(void)
+{
+    return (_totalAmount);
+}
 
-// int Account::getNbDeposits(void)
-// {
-//     return (_totalNbDeposits);
-// }
+int Account::getNbDeposits(void)
+{
+    return (_totalNbDeposits);
+}
 
-// int Account::getNbWithdrawals(void)
-// {
-//     return (_totalNbWithdrawals);
-// }
+int Account::getNbWithdrawals(void)
+{
+    return (_totalNbWithdrawals);
+}
 
 // void    Account::makeDeposit(int deposit)
 // {

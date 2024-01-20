@@ -6,11 +6,11 @@
 #    By: omakran <omakran@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 18:07:13 by omakran           #+#    #+#              #
-#    Updated: 2024/01/18 18:08:49 by omakran          ###   ########.fr        #
+#    Updated: 2024/01/20 11:50:16 by omakran          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC = the_job_of_your
+EXEC = The_Job_Of_Your_Dreams
 
 SRCS =  Account.cpp tests.cpp
 
