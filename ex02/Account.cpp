@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:06:58 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/20 11:44:25 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/20 12:01:32 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,12 @@ void    Account::displayAccountsInfos(void)
 {
     _displayTimestamp();
     std::cout << "accounts:" << getNbAccounts() << ";" << "total:" << getTotalAmount() << ";" << "deposits:" << getNbDeposits() << ";" << "withdrawals:" << getNbWithdrawals() << std::endl;
+}
+
+void    Account::displayStatus(void) const
+{
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";" << "amount:" << checkAmount() << ";" << "deposits:" << _nbDeposits << ";" << "withdrawals:" << _nbWithdrawals << std::endl;
 }
 
 int Account::getNbAccounts(void)
