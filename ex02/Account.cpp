@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:06:58 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/19 19:23:26 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/20 11:35:32 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,39 @@ Account::Account(int deposit)
     _accountIndex = _nbAccounts - 1;
     _amount = deposit;
     _totalAmount += deposit;
-    std::cout << "[19920104_091532] index:" << _accountIndex << ";" << "amount:" << _amount << ";created" << std::endl;
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";" << "amount:" << _amount << ";created" << std::endl;
 }
 
 Account::~Account(void)
 {
-    std::cout << "[19920104_091532] index:" << _accountIndex << ";" << "amount:" << _amount << ";closed" << std::endl;
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";" << "amount:" << _amount << ";closed" << std::endl;
 }
 
-void  Account::displayAccountsInfos(void)
+void    Account::_displayTimestamp(void)
 {
-    std::cout << "[19920104_091532] accounts:" << _nbAccounts << ";" << "total:" << _totalAmount << ";" << "deposits:" << _totalNbDeposits << ";" << "withdrawals:" << _totalNbWithdrawals << std::endl;
+    // tm is a structure to represent a Calendar time
+    std::tm fixedTime = {}; // Initialize with zeros to set a fixed date and time
+    fixedTime.tm_year = 92; // 1992 (years since 1900)
+    fixedTime.tm_mon = 0;  // January
+    fixedTime.tm_mday = 4;
+    fixedTime.tm_hour = 9;
+    fixedTime.tm_min = 15;
+    fixedTime.tm_sec = 32;
+
+    // Format the timestamp as [YYYYMMDD_HHMMSS]
+    char timestamp[20];
+    // string format time
+    std::strftime(timestamp, sizeof(timestamp), "[%Y%m%d_%H%M%S]", &fixedTime);
+    // Display the timestamp
+    std::cout << timestamp << " ";  
+}
+
+void    Account::displayAccountsInfos(void)
+{
+    _displayTimestamp();
+    std::cout << "accounts:" << _nbAccounts << ";" << "total:" << _totalAmount << ";" << "deposits:" << _totalNbDeposits << ";" << "withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
 // int Account::getNbAccounts(void)
@@ -59,3 +81,12 @@ void  Account::displayAccountsInfos(void)
 //     return (_totalNbWithdrawals);
 // }
 
+// void    Account::makeDeposit(int deposit)
+// {
+        
+// }
+
+int Account::checkAmount(void) const
+{
+    return (_amount);
+}
