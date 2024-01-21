@@ -67,7 +67,7 @@
 [19920104_091532] index:6;amount:106;deposits:1;withdrawals:1
 [19920104_091532] index:7;amount:8942;deposits:1;withdrawals:1
 
-=> destructor:
+=> destructor:  
 [19920104_091532] index:0;amount:47;closed
 [19920104_091532] index:1;amount:785;closed
 [19920104_091532] index:2;amount:864;closed
