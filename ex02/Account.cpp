@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:06:58 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/20 12:01:32 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/20 13:05:30 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,35 @@ int Account::getNbWithdrawals(void)
     return (_totalNbWithdrawals);
 }
 
-// void    Account::makeDeposit(int deposit)
-// {
-        
-// }
+void    Account::makeDeposit(int deposit)
+{
+    _displayTimestamp();
+    _nbDeposits++;
+    _totalNbDeposits++;
+    _totalAmount += deposit;
+    std::cout << "index:" << _accountIndex << ";" << "p_amount:" << _amount << std::flush;
+    _amount += deposit;
+    std::cout << ";" << "deposit:" << deposit << ";" << "amount:" << checkAmount()
+            << ";" << "nb_deposits:" << _nbDeposits << std::endl;
+}
+
+bool    Account::makeWithdrawal(int withdrawal)
+{
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";" << "p_amount:" << _amount << ";" << "withdrawal:" << std::flush;
+    if (withdrawal > _amount)
+    {
+        std::cout << "refused" << std::endl;
+        return (false);
+    }
+    std::cout << withdrawal << ";" << std::flush;
+    _nbWithdrawals++;
+    _totalNbWithdrawals++;
+    _totalAmount -= withdrawal;
+    _amount -= withdrawal;
+    std::cout << "amount:" << _amount << ";" << "nb_withdrawals:" << _nbWithdrawals << std::endl;
+    return (true);
+}
 
 int Account::checkAmount(void) const
 {
