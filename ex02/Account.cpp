@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:06:58 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/20 13:05:30 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/22 17:06:02 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,16 @@ Account::~Account(void)
 
 void    Account::_displayTimestamp(void)
 {
-    // tm is a structure to represent a Calendar time
-    std::tm fixedTime = {}; // Initialize with zeros to set a fixed date and time
-    fixedTime.tm_year = 92; // 1992 (years since 1900)
-    fixedTime.tm_mon = 0;  // January
-    fixedTime.tm_mday = 4;
-    fixedTime.tm_hour = 9;
-    fixedTime.tm_min = 15;
-    fixedTime.tm_sec = 32;
-
+    // Get the current time since the epoch (January 1, 1970, UTC) using the 'std::time'.
+    std::time_t currentTime = std::time(NULL);
+    // tm is a structure to represent a Calendar time.
+    std::tm *localTime = std::localtime(&currentTime);
     // Format the timestamp as [YYYYMMDD_HHMMSS]
     char timestamp[20];
-    // string format time
-    std::strftime(timestamp, sizeof(timestamp), "[%Y%m%d_%H%M%S]", &fixedTime);
-    // Display the timestamp
-    std::cout << timestamp << " ";  
+    // strftime: for formatting date and time information into a character string.
+    std::strftime(timestamp, sizeof(timestamp), "[%Y%m%d_%H%M%S]", localTime);
+    // Print the formatted timestamp
+    std::cout << timestamp << " ";
 }
 
 void    Account::displayAccountsInfos(void)
