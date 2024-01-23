@@ -6,7 +6,7 @@
 /*   By: omakran <omakran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:22:09 by omakran           #+#    #+#             */
-/*   Updated: 2024/01/18 18:20:26 by omakran          ###   ########.fr       */
+/*   Updated: 2024/01/23 16:26:08 by omakran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void    PhoneBook::displayContacts()
     }
     std::cout << std::endl;
 }
+
 int PhoneBook::_inputUserIndex()const
 {
     int     index = -1337;
@@ -67,6 +68,7 @@ int PhoneBook::_inputUserIndex()const
         std::cout << "Please Enter the Index for searching about the contact: " << std::flush;
         std::cin >> index;
         // It checks if the stream is in a good state, meaning that the last input operation was successful and there are no error flags set
+        // cin.good(): that returns true if the stream is in a good state and false otherwise.
         if ((index >= 0 && index <= 8) && std::cin.good())
         {
             check = true ;
@@ -75,7 +77,11 @@ int PhoneBook::_inputUserIndex()const
         }
         else
             {
+                // called to clear the error flags. This allows the input stream to recover from an error state
                 std::cin.clear();
+                // to discard any remaining characters in the input buffer until a newline character 
+                // and used as the count argument, which means it tries to ignore the maximum number of characters possible
+                // numeric_limits is a template
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cout << "Please Enter a VALID INDEX, <from 1 TO 8>." << std::endl; 
             }
